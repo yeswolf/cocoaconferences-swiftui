@@ -43,8 +43,8 @@ class NetworkTests: QuickSpec {
                 )
                 let conference: Conference = yaml[0]
                 expect(conference.name).to(equal("mDevCamp"))
-                expect(conference.start).to(equal( "2019-05-30".date()))
-                expect(conference.end).to(equal( "2019-05-31".date()))
+                expect(conference.start).to(equal("2019-05-30".date()))
+                expect(conference.end).to(equal("2019-05-31".date()))
                 expect(conference.cocoaOnly).to(equal(false))
                 expect(conference.location).to(equal("🇨🇿 Prague, Czech Republic"))
 
@@ -70,7 +70,7 @@ class NetworkTests: QuickSpec {
                 let conference = yaml[0]
                 expect(conference.name).to(equal("mDevCamp"))
                 expect(conference.start).to(equal("2019-05-30".date()))
-                expect(conference.end).to(equal( "2019-05-31".date()))
+                expect(conference.end).to(equal("2019-05-31".date()))
                 expect(conference.cocoaOnly).to(equal(false))
                 expect(conference.location).to(equal("🇨🇿 Prague, Czech Republic"))
                 expect(conference.cfp).to(beNil())

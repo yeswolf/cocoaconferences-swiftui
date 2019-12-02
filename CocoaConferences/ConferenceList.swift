@@ -13,28 +13,27 @@ public struct Checkbox: View {
     @Binding var checked: Bool
 
     public var body: some View {
-        Button(action: {
-            self.checked.toggle()
-        }) {
-            HStack {
-                Image(systemName: self.checked ? "checkmark.square" : "square")
+        HStack {
+            Toggle(isOn: self.$checked) {
                 Text(text)
             }
         }
     }
 }
 
-extension Button where Label == Text {
-    public init(link: String) {
-        self.init(action: {
-            let url = URL(string: link)!
+public struct LinkButton: View {
+    var title = ""
+    var link = ""
+    public var body: some View {
+        Button(action: {
+            let url = URL(string: self.link)!
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(url)
             }
         }) {
-            return Text(link).underline()
+            Text(self.title).underline().lineLimit(1)
         }
     }
 }
@@ -46,25 +45,30 @@ public struct FilterView: View {
 
     public var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                Text("Choose start date")
-                DatePicker("", selection: self.$filter.start, displayedComponents: .date).labelsHidden()
-                Text("Choose end date")
-                DatePicker("", selection: self.$filter.end, displayedComponents: .date).labelsHidden()
-                Checkbox(text: "CFP opened", checked: self.$filter.cfpOpened)
-                Text(self.filter.start.friendly())
-            }.navigationBarTitle("Filter")
-                    .navigationBarItems(
-                            leading: Button(action: {
-                                self.reload(self.filter)
-                            }, label: { Text("Filter") }),
-                            trailing: Button(action: {
-                                self.dismiss()
-                            }, label: { Text("Close") })
-                    )
+            HStack {
+                VStack(alignment: .leading) {
+                    List {
+                        Section(header: Text("START DATE")) {
+                            DatePicker("", selection: self.$filter.start, displayedComponents: .date).labelsHidden()
+                        }
+                        Section(header: Text("END DATE")) {
+                            DatePicker("", selection: self.$filter.end, displayedComponents: .date).labelsHidden()
+                        }
+                        Section(header: Text("OPTIONS")) {
+                            Checkbox(text: "CFP opened", checked: self.$filter.cfpOpened)
+                        }
 
+                    }.listStyle(GroupedListStyle())
+                }.navigationBarItems(
+                        leading: Button(action: {
+                            self.dismiss()
+                        }, label: { Text("Cancel") }),
+                        trailing: Button(action: {
+                            self.reload(self.filter)
+                        }, label: { Text("Filter") })
+                ).navigationBarTitle("Filter", displayMode: .automatic)
+            }
         }
-
     }
 }
 
@@ -72,26 +76,28 @@ public struct FilterView: View {
 struct ConferenceDetail: View {
     var conference: Conference
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5.0) {
             HStack {
                 Text("🔗")
-                Button(link: self.conference.link!)
+                LinkButton(title: self.conference.link!, link: self.conference.link!)
             }
             Text(conference.textDates())
             Text(conference.location)
-            if conference.cfp != nil {
-                HStack {
-                    Text("🖊🔗")
-                    Button(link: self.conference.cfp!.link)
-                }
-                if (conference.cfp!.deadline != nil) {
-                    Text("🖊🗓 \(conference.cfp!.deadline!.friendly())")
+            HStack {
+                Text("🖊")
+                if conference.cfp == nil {
+                    Text("See website for details")
                 } else {
-                    Text("🖊🔗 not announced")
+                    if conference.cfp!.deadline != nil {
+                        LinkButton(title:self.conference.cfp!.deadline!.friendly(), link: self.conference.cfp!.link)
+                    } else {
+                        LinkButton(title: "Deadline not specified", link: self.conference.cfp!.link)
+                    }
                 }
             }
         }.navigationBarTitle(conference.name)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                .padding([.leading, .trailing], 20)
     }
 }
 
@@ -111,17 +117,17 @@ struct ConferenceList: View {
             }.navigationBarTitle("Conferences")
                     .navigationBarItems(
                             trailing: Button(action: {
-                                self.filterOpened = true
+                                self.filterOpened.toggle()
                             }, label: {
                                 Text("Filter")
                             }).popover(isPresented: $filterOpened, content: {
                                 FilterView(filter: self.filter, reload: { filter in
-                                    self.filterOpened = false
+                                    self.filterOpened.toggle()
                                     api.conferences(filter: self.filter) { conferences in
                                         self.data.conferences = conferences
                                     }
                                 }, dismiss: {
-                                    self.filterOpened = false
+                                    self.filterOpened.toggle()
                                 })
                             })
                     )
