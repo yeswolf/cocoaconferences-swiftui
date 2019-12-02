@@ -22,7 +22,7 @@ public struct Checkbox: View {
             }
         }
     }
-}9
+}
 
 extension Button where Label == Text {
     public init(link: String) {
