@@ -20,7 +20,6 @@
 		62E98D576F01B2809F11F2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E98E3507D4B7167E715F41 /* Assets.xcassets */; };
 		62E98DBC6CA3E6665C5DA499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E9887A664800442038D70C /* Preview Assets.xcassets */; };
 		62E98F9C30EC9133BA1A6A75 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62E98F60EF834645CD31A66A /* .gitignore */; };
-		62E98FEA9CA394358FB0BE11 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 62E98CB2D8651EE38EDE5A3C /* README.md */; };
 		D95633511E4131B5FD441844 /* Pods_CocoaConferencesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83119E14CC446E2BFF6609BA /* Pods_CocoaConferencesTests.framework */; };
 		F388B9F5022A10E8DBB1F5B0 /* Pods_CocoaConferencesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E239046DC2B1CC6E69A82C /* Pods_CocoaConferencesUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +56,6 @@
 		62E98AEE1D03736DB881DF32 /* ConferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceList.swift; sourceTree = "<group>"; };
 		62E98B59C55D4AB122AF92C6 /* Cfp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cfp.swift; sourceTree = "<group>"; };
 		62E98C80389D8A0293A8B56D /* CocoaConferencesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaConferencesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		62E98CB2D8651EE38EDE5A3C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62E98D366567F89D701A3500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62E98D90668E4ABA1697CA11 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		62E98E3507D4B7167E715F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				4278A570D602139A673F1A2E /* Pods */,
 				0DB1A0B7A47E480FC15A8F30 /* Frameworks */,
 				62E98F60EF834645CD31A66A /* .gitignore */,
-				62E98CB2D8651EE38EDE5A3C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -456,7 +453,6 @@
 				62E987903D0BC54FAF79E5AC /* Cfp.swift in Sources */,
 				62E98212CDE8976A45BC491D /* Conference.swift in Sources */,
 				62E9888ACAC9C07AE86924C0 /* Data.swift in Sources */,
-				62E98FEA9CA394358FB0BE11 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
