@@ -18,7 +18,8 @@ class NetworkTests: QuickSpec {
         describe("API") {
             it("should load conference list") {
                 waitUntil(timeout: 5) { done in
-                    api.conferences { conferences in
+                    let filter = CocoaConferences.Filter()
+                    api.conferences(filter: filter) { conferences in
                         expect(conferences).toNot(beEmpty())
                         expect(conferences.count).to(beGreaterThan(1))
                         expect(conferences[0].name).toNot(beEmpty())

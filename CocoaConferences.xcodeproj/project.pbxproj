@@ -274,6 +274,9 @@
 					62E982FCA0B4E5F7B6D3B92D = {
 						DevelopmentTeam = Y847937U8K;
 					};
+					62E988278BBFA15246864087 = {
+						DevelopmentTeam = Y847937U8K;
+					};
 					62E98965B43C3164393C9F7F = {
 						DevelopmentTeam = Y847937U8K;
 					};
@@ -587,6 +590,7 @@
 			baseConfigurationReference = 64BB91E964DA96FD4CCFE085 /* Pods-CocoaConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaConferences.app/CocoaConferences";
+				DEVELOPMENT_TEAM = Y847937U8K;
 				INFOPLIST_FILE = CocoaConferencesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jetbrains.CocoaConferencesTests;
@@ -696,6 +700,7 @@
 			baseConfigurationReference = 23416E7F8D16FE54206E7638 /* Pods-CocoaConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaConferences.app/CocoaConferences";
+				DEVELOPMENT_TEAM = Y847937U8K;
 				INFOPLIST_FILE = CocoaConferencesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jetbrains.CocoaConferencesTests;
