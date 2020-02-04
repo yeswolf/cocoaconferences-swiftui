@@ -61,7 +61,9 @@ class API {
                     }
                 }, receiveValue: { conferences in
                     completion(
-                            conferences.sorted { $0.start! > $1.start! }.filter { $0.start! > filter.start && $0.start! < filter.end }.filter {
+                            conferences.sorted {
+                                if filter.asc { return $0.start! < $1.start! } else { return $0.start! > $1.start! }
+                            }.filter { $0.start! > filter.start && $0.start! < filter.end }.filter {
                                 !filter.cfpOpened || ($0.cfp != nil) && (($0.cfp!.deadline == nil) || ($0.cfp!.deadline != nil && $0.cfp!.deadline! > Date()))
                             }
                     )
@@ -73,6 +75,7 @@ class Filter: ObservableObject {
     @Published var start: Date = Date()
     @Published var end: Date = Calendar.current.date(byAdding: .year, value: 1, to: Date())!
     @Published var cfpOpened: Bool = false
+    @Published var asc: Bool = false
 }
 
 class ConferenceObserver: ObservableObject {

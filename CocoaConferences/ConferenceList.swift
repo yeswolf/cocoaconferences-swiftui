@@ -56,6 +56,7 @@ public struct FilterView: View {
                         }
                         Section(header: Text("OPTIONS")) {
                             Checkbox(text: "CFP opened", checked: self.$filter.cfpOpened)
+                            Checkbox(text: "Sort ASC", checked: self.$filter.asc)
                         }
 
                     }.listStyle(GroupedListStyle())
