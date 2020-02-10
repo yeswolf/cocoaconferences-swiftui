@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CE8E6B523F18FD2005F18F5 /* conferences.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 62E983B4787D1DA8C74682ED /* conferences.yaml */; };
 		39CB6960762E858233104F40 /* Pods_CocoaConferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00BCC0047C4C6A3F954871F /* Pods_CocoaConferences.framework */; };
 		62E98212CDE8976A45BC491D /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E984396C3C3EEFCF89F1F0 /* Conference.swift */; };
 		62E982BB6AC4155E029FC7BB /* CocoaConferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98042B39CBCAAA81FF66A /* CocoaConferencesUITests.swift */; };
 		62E982F163E13EE212EE7DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98D366567F89D701A3500 /* AppDelegate.swift */; };
 		62E98301F0617801FA1C2C41 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988406E75611377DE5BE3 /* NetworkTests.swift */; };
+		62E98440D9DB132BCAE18C3F /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988D8445D4EAC7967D2E3 /* Checkbox.swift */; };
 		62E984466CDB5FCCC44F23C5 /* ConferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98AEE1D03736DB881DF32 /* ConferenceList.swift */; };
+		62E9865F4E0E58415D06A083 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E9812C5C9A21F1BF47E97C /* FilterView.swift */; };
+		62E9870936674CAC1F7E50B8 /* ConferenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E989B8350AA5075B975991 /* ConferenceDetail.swift */; };
 		62E987903D0BC54FAF79E5AC /* Cfp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98B59C55D4AB122AF92C6 /* Cfp.swift */; };
 		62E987CF1FAF311278AB80E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E981E4576F31D41B18FD11 /* LaunchScreen.storyboard */; };
 		62E9888ACAC9C07AE86924C0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98D90668E4ABA1697CA11 /* Data.swift */; };
 		62E98D34198595571D148415 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988CA738F6E5922DF6978 /* SceneDelegate.swift */; };
 		62E98D576F01B2809F11F2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E98E3507D4B7167E715F41 /* Assets.xcassets */; };
 		62E98DBC6CA3E6665C5DA499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E9887A664800442038D70C /* Preview Assets.xcassets */; };
+		62E98E109F8C91CA7E227C75 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E987E4EEE62DD173FCE2C9 /* LinkButton.swift */; };
 		62E98F9C30EC9133BA1A6A75 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62E98F60EF834645CD31A66A /* .gitignore */; };
 		D95633511E4131B5FD441844 /* Pods_CocoaConferencesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83119E14CC446E2BFF6609BA /* Pods_CocoaConferencesTests.framework */; };
 		F388B9F5022A10E8DBB1F5B0 /* Pods_CocoaConferencesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E239046DC2B1CC6E69A82C /* Pods_CocoaConferencesUITests.framework */; };
@@ -45,14 +50,19 @@
 		23416E7F8D16FE54206E7638 /* Pods-CocoaConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaConferencesTests.debug.xcconfig"; path = "Target Support Files/Pods-CocoaConferencesTests/Pods-CocoaConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2CC795F7237EEC9800102414 /* CocoaConferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaConferences.entitlements; sourceTree = "<group>"; };
 		62E98042B39CBCAAA81FF66A /* CocoaConferencesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaConferencesUITests.swift; sourceTree = "<group>"; };
+		62E9812C5C9A21F1BF47E97C /* FilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		62E983B4787D1DA8C74682ED /* conferences.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = conferences.yaml; sourceTree = "<group>"; };
 		62E984396C3C3EEFCF89F1F0 /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		62E984F6F36392E8237CF7FA /* CocoaConferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaConferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E98673DF4274494F6E2DF0 /* CocoaConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E986CDA1DEB43F02C2EF2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		62E987E4EEE62DD173FCE2C9 /* LinkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		62E988406E75611377DE5BE3 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		62E9887A664800442038D70C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62E988CA738F6E5922DF6978 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		62E988D8445D4EAC7967D2E3 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		62E9892DB679C53A28C77F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		62E989B8350AA5075B975991 /* ConferenceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceDetail.swift; sourceTree = "<group>"; };
 		62E98AEE1D03736DB881DF32 /* ConferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceList.swift; sourceTree = "<group>"; };
 		62E98B59C55D4AB122AF92C6 /* Cfp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cfp.swift; sourceTree = "<group>"; };
 		62E98C80389D8A0293A8B56D /* CocoaConferencesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaConferencesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				62E98AC43DD5C9C8CA82254C /* Preview Content */,
+				62E9853A9A02C1AF52729664 /* Resources */,
 				62E98AEBA7A32909C3FEDBC7 /* Models */,
+				62E9894571A7B47EEF52AFB0 /* Controls */,
 				2CC795F7237EEC9800102414 /* CocoaConferences.entitlements */,
 				62E98E8E3825C5726E6C0BCC /* Info.plist */,
 				62E98E3507D4B7167E715F41 /* Assets.xcassets */,
@@ -148,6 +160,14 @@
 			path = CocoaConferencesUITests;
 			sourceTree = "<group>";
 		};
+		62E9853A9A02C1AF52729664 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62E983B4787D1DA8C74682ED /* conferences.yaml */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		62E987D30116F16D073A54B0 /* CocoaConferencesTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +185,17 @@
 				62E98C80389D8A0293A8B56D /* CocoaConferencesUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		62E9894571A7B47EEF52AFB0 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				62E988D8445D4EAC7967D2E3 /* Checkbox.swift */,
+				62E987E4EEE62DD173FCE2C9 /* LinkButton.swift */,
+				62E9812C5C9A21F1BF47E97C /* FilterView.swift */,
+				62E989B8350AA5075B975991 /* ConferenceDetail.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		62E98AC43DD5C9C8CA82254C /* Preview Content */ = {
@@ -309,6 +340,7 @@
 			files = (
 				62E98D576F01B2809F11F2FB /* Assets.xcassets in Resources */,
 				62E987CF1FAF311278AB80E0 /* LaunchScreen.storyboard in Resources */,
+				2CE8E6B523F18FD2005F18F5 /* conferences.yaml in Resources */,
 				62E98DBC6CA3E6665C5DA499 /* Preview Assets.xcassets in Resources */,
 				62E98F9C30EC9133BA1A6A75 /* .gitignore in Resources */,
 			);
@@ -456,6 +488,10 @@
 				62E987903D0BC54FAF79E5AC /* Cfp.swift in Sources */,
 				62E98212CDE8976A45BC491D /* Conference.swift in Sources */,
 				62E9888ACAC9C07AE86924C0 /* Data.swift in Sources */,
+				62E98440D9DB132BCAE18C3F /* Checkbox.swift in Sources */,
+				62E98E109F8C91CA7E227C75 /* LinkButton.swift in Sources */,
+				62E9865F4E0E58415D06A083 /* FilterView.swift in Sources */,
+				62E9870936674CAC1F7E50B8 /* ConferenceDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +646,7 @@
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CocoaConferences/Preview Content\"";
 				DEVELOPMENT_TEAM = Y847937U8K;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CocoaConferences/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -630,6 +667,7 @@
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CocoaConferences/Preview Content\"";
 				DEVELOPMENT_TEAM = Y847937U8K;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CocoaConferences/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

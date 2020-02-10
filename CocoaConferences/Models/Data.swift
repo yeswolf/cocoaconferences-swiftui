@@ -37,7 +37,31 @@ extension YAMLDecoder: TopLevelDecoder {
     public func decode<T: Decodable>(_ type: T.Type, from data: Input) throws -> T {
         return try decode(type, from: String(data: data.data, encoding: .utf8)!)
     }
+
 }
+
+func load<T: Decodable>(_ filename: String) -> T {
+    let data: Data
+
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+            else {
+        fatalError("Couldn't find \(filename) in main bundle.")
+    }
+
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+    }
+
+    do {
+        let decoder = YAMLDecoder()
+        return try decoder.decode(T.self, from: String(data: data, encoding: .utf8)!)
+    } catch {
+        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    }
+}
+
 
 class API {
 
@@ -49,25 +73,25 @@ class API {
 
     func conferences(filter: Filter, completion: @escaping (([Conference]) -> Void)) {
         URLSession.shared.dataTaskPublisher(for: URL(string: confURL)!)
-                .decode(type: [Conference].self, decoder: YAMLDecoder())
-                .eraseToAnyPublisher()
-                .receive(on: RunLoop.main)
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }, receiveValue: { conferences in
-                    completion(
-                            conferences.sorted {
-                                if filter.asc { return $0.start! < $1.start! } else { return $0.start! > $1.start! }
-                            }.filter { $0.start! > filter.start && $0.start! < filter.end }.filter {
-                                !filter.cfpOpened || ($0.cfp != nil) && (($0.cfp!.deadline == nil) || ($0.cfp!.deadline != nil && $0.cfp!.deadline! > Date()))
-                            }
-                    )
-                })
+                         .decode(type: [Conference].self, decoder: YAMLDecoder())
+                         .eraseToAnyPublisher()
+                         .receive(on: RunLoop.main)
+                         .sink(receiveCompletion: { completion in
+                             switch completion {
+                             case .finished:
+                                 break
+                             case .failure(let error):
+                                 print(error.localizedDescription)
+                             }
+                         }, receiveValue: { conferences in
+                             completion(
+                                     conferences.sorted {
+                                         if filter.asc { return $0.start! < $1.start! } else { return $0.start! > $1.start! }
+                                     }.filter { $0.start! > filter.start && $0.start! < filter.end }.filter {
+                                         !filter.cfpOpened || ($0.cfp != nil) && (($0.cfp!.deadline == nil) || ($0.cfp!.deadline != nil && $0.cfp!.deadline! > Date()))
+                                     }
+                             )
+                         })
     }
 }
 
