@@ -11,7 +11,7 @@ struct ConferenceDetail: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5.0) {
             HStack {
-                Text("🔗")
+                Text("🔗" )
                 LinkButton(title: self.conference.link!, link: self.conference.link!)
             }
             Text(conference.textDates())
@@ -35,10 +35,16 @@ struct ConferenceDetail: View {
 }
 
 
-struct ConferenceDetailPreview: PreviewProvider {
+class ConferenceDetailPreview: PreviewProvider {
     static var previews: some View {
         Group {
             ConferenceDetail(conference: Conference())
         }
     }
+    #if DEBUG
+    @objc class func injected() {
+           UIApplication.shared.windows.first?.rootViewController =
+           UIHostingController(rootView: ConferenceDetailPreview.previews)
+    }
+    #endif
 }

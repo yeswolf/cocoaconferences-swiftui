@@ -19,12 +19,17 @@ public struct Checkbox: View {
     }
 }
 
-struct CheckboxPreview: PreviewProvider {
+class CheckboxPreview: PreviewProvider {
     static var previews: some View {
         Group {
             Checkbox(checked: .constant(false)).previewLayout(.sizeThatFits)
             Checkbox(checked: .constant(true)).previewLayout(.sizeThatFits)
         }
     }
+    #if DEBUG
+    @objc class func injected() {
+        UIApplication.shared.windows.first?.rootViewController =
+        UIHostingController(rootView: CheckboxPreview.previews)
+    }
+    #endif
 }
-

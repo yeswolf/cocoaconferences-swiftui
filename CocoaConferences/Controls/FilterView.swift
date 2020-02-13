@@ -26,12 +26,11 @@ public struct FilterView: View {
                             Checkbox(text: "CFP opened", checked: self.$filter.cfpOpened)
                             Checkbox(text: "Sort ASC", checked: self.$filter.asc)
                         }
-
                     }.listStyle(GroupedListStyle())
                 }.navigationBarItems(
                         leading: Button(action: {
                             self.dismiss()
-                        }, label: { Text("Cancel") }),
+                        }, label: { Text("Cancel1") }),
                         trailing: Button(action: {
                             self.reload(self.filter)
                         }, label: { Text("Filter") })
@@ -41,14 +40,16 @@ public struct FilterView: View {
     }
 }
 
-struct FilterViewPreview: PreviewProvider {
+class FilterViewPreview: PreviewProvider {
     static var previews: some View {
         Group {
-            FilterView(filter: Filter(), reload: { (Filter) in
-                
-            }) {
-            
-            }.previewLayout(.sizeThatFits)
+            FilterView(filter: Filter(), reload: { (Filter) in}) {}.previewLayout(.sizeThatFits)
         }
     }
+    #if DEBUG
+    @objc class func injected() {
+        UIApplication.shared.windows.first?.rootViewController =
+        UIHostingController(rootView: FilterViewPreview.previews)
+    }
+    #endif
 }

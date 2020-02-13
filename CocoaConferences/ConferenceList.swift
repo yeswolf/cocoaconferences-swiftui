@@ -42,19 +42,16 @@ struct ConferenceList: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+class ConferenceListPreviews: PreviewProvider {
     static var previews: some View {
         let observer = ConferenceObserver()
         observer.conferences = load("conferences.yaml")
         return ConferenceList(data: observer, filterOpened: false, filter: Filter())
     }
-}
-
-#if DEBUG
-class Refresher {
+    #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-        UIHostingController(rootView: ConferenceList())
+            UIHostingController(rootView: ConferenceListPreviews.previews)
     }
+    #endif
 }
-#endif

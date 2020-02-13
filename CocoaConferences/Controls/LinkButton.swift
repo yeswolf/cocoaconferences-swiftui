@@ -23,10 +23,16 @@ public struct LinkButton: View {
     }
 }
 
-struct LinkButtonPreview: PreviewProvider {
+class LinkButtonPreview: PreviewProvider {
     static var previews: some View {
         Group {
             LinkButton(title: "%title%", link: "https://www.google.com").previewLayout(.sizeThatFits)
         }
     }
+    #if DEBUG
+        @objc class func  injected() {
+            UIApplication.shared.windows.first?.rootViewController =
+            UIHostingController(rootView: LinkButtonPreview.previews)
+        }
+    #endif
 }
