@@ -30,7 +30,7 @@ public struct FilterView: View {
                 }.navigationBarItems(
                         leading: Button(action: {
                             self.dismiss()
-                        }, label: { Text("Cancel1") }),
+                        }, label: { Text("Cancel") }),
                         trailing: Button(action: {
                             self.reload(self.filter)
                         }, label: { Text("Filter") })
