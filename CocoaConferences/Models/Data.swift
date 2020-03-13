@@ -25,7 +25,8 @@ extension String {
         format.dateFormat = "yyyy-MM-dd"
         format.locale = Locale(identifier: "en_US_POSIX")
         let result = format.date(from: self)!
-        var comps = Calendar.current.dateComponents([.year, .month, .day], from: result)
+        var comps =
+                Calendar.current.dateComponents([.year, .month, .day], from: result)
         comps.timeZone = TimeZone(secondsFromGMT: 0)
         return Calendar.current.date(from: comps)!
     }
