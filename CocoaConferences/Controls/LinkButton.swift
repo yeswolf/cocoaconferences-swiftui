@@ -29,10 +29,11 @@ class LinkButtonPreview: PreviewProvider {
             LinkButton(title: "%title%", link: "https://www.google.com").previewLayout(.sizeThatFits)
         }
     }
+
     #if DEBUG
-        @objc class func  injected() {
-            UIApplication.shared.windows.first?.rootViewController =
-            UIHostingController(rootView: LinkButtonPreview.previews)
-        }
+    @objc class func injected() {
+        UIApplication.shared.windows.first?.rootViewController =
+                UIHostingController(rootView: LinkButtonPreview.previews)
+    }
     #endif
 }

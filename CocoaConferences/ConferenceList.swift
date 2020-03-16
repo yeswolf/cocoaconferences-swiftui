@@ -48,10 +48,11 @@ class ConferenceListPreviews: PreviewProvider {
         observer.conferences = load("conferences.yaml")
         return ConferenceList(data: observer, filterOpened: false, filter: Filter())
     }
+
     #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-            UIHostingController(rootView: ConferenceListPreviews.previews)
+                UIHostingController(rootView: ConferenceListPreviews.previews)
     }
     #endif
 }

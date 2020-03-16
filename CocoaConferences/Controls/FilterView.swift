@@ -43,13 +43,14 @@ public struct FilterView: View {
 class FilterViewPreview: PreviewProvider {
     static var previews: some View {
         Group {
-            FilterView(filter: Filter(), reload: { (Filter) in}) {}.previewLayout(.sizeThatFits)
+            FilterView(filter: Filter(), reload: { (Filter) in }) {}.previewLayout(.sizeThatFits)
         }
     }
+
     #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-        UIHostingController(rootView: FilterViewPreview.previews)
+                UIHostingController(rootView: FilterViewPreview.previews)
     }
     #endif
 }

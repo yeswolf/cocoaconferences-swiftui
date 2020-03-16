@@ -21,7 +21,7 @@ class Conference: Codable, Identifiable {
         cfp?.link = "https://www.google.com"
         link = "https://www.google.com"
     }
-    
+
     private enum CodingKeys: String, CodingKey {
         case cfp
         case cocoaOnly = "cocoa-only"

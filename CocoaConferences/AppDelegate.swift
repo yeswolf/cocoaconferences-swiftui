@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-        UIHostingController(rootView: ConferenceList())
+                UIHostingController(rootView: ConferenceList())
     }
     #endif
 }

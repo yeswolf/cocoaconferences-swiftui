@@ -26,10 +26,11 @@ class CheckboxPreview: PreviewProvider {
             Checkbox(checked: .constant(true)).previewLayout(.sizeThatFits)
         }
     }
+
     #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-        UIHostingController(rootView: CheckboxPreview.previews)
+                UIHostingController(rootView: CheckboxPreview.previews)
     }
     #endif
 }
