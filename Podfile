@@ -5,7 +5,6 @@ project 'CocoaConferences.xcodeproj'
 
 target 'CocoaConferences' do
   use_frameworks!
-  pod 'Yams'
 
   target 'CocoaConferencesTests' do
     inherit! :search_paths
