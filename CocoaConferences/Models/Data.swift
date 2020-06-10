@@ -68,12 +68,14 @@ class API {
 
     private var url: String
 
+    private var result: AnyCancellable?
+
     init(url: String) {
         self.url = url
     }
 
     func conferences(filter: Filter, completion: @escaping ([Conference]) -> Void) {
-        _ = URLSession.shared.dataTaskPublisher(for: URL(string: confURL)!)
+        result = URLSession.shared.dataTaskPublisher(for: URL(string: confURL)!)
                              .decode(type: [Conference].self, decoder: YAMLDecoder())
                              .eraseToAnyPublisher()
                              .receive(on: RunLoop.main)

@@ -17,7 +17,7 @@ class NetworkTests: QuickSpec {
         super.spec()
         describe("API") {
             it("should load conference list") {
-                waitUntil(timeout: 5) { done in
+                waitUntil(timeout: 15) { done in
                     let filter = CocoaConferences.Filter()
                     api.conferences(filter: filter) { conferences in
                         expect(conferences).toNot(beEmpty())
