@@ -1,16 +1,14 @@
 import Foundation
-import Yams
+public class Conference: Codable, Identifiable {
+    public var name = ""
+    public var location: String
+    public var cocoaOnly = false
+    public var start: Date?
+    public var end: Date?
+    public var cfp: Cfp?
+    public var link: String?
 
-class Conference: Codable, Identifiable {
-    var name = ""
-    var location: String
-    var cocoaOnly = false
-    var start: Date?
-    var end: Date?
-    var cfp: Cfp?
-    var link: String?
-
-    init() {
+    public init() {
         name = "%name%"
         location = "%location%"
         cocoaOnly = false
@@ -32,7 +30,7 @@ class Conference: Codable, Identifiable {
         case start
     }
 
-    func textDates() -> String {
+    public func textDates() -> String {
         var result = "🗓 \(start!.friendly())"
         if let end = self.end {
             result = "\(result) - \(end.friendly())"

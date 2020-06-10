@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import CCLibrary
 struct ConferenceList: View {
     @ObservedObject var data = ConferenceObserver()
     @State var filterOpened = false
@@ -30,7 +30,7 @@ struct ConferenceList: View {
                      }).popover(isPresented: $filterOpened, content: {
                          FilterView(filter: self.filter, reload: { filter in
                              self.filterOpened.toggle()
-                             api.conferences(filter: self.filter) { conferences in
+                             CCAPI.conferences(filter: self.filter) { conferences in
                                  self.data.conferences = conferences
                              }
                          }, dismiss: {

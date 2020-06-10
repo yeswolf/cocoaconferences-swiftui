@@ -9,8 +9,6 @@
 import UIKit
 import SwiftUI
 
-var api = API(url: confURL)
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

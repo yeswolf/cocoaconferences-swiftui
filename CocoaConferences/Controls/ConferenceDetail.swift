@@ -5,7 +5,7 @@
 
 import Foundation
 import SwiftUI
-
+import CCLibrary
 struct ConferenceDetail: View {
     var conference: Conference
     var body: some View {

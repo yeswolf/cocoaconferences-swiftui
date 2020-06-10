@@ -9,6 +9,7 @@
 import XCTest
 import Quick
 import Nimble
+import CCLibrary
 import Yams
 @testable import CocoaConferences
 
@@ -18,7 +19,7 @@ class NetworkTests: QuickSpec {
         describe("API") {
             it("should load conference list") {
                 waitUntil(timeout: 15) { done in
-                    let filter = CocoaConferences.Filter()
+                    let filter = CCLibrary.Filter()
                     api.conferences(filter: filter) { conferences in
                         expect(conferences).toNot(beEmpty())
                         expect(conferences.count).to(beGreaterThan(1))
@@ -68,7 +69,7 @@ class NetworkTests: QuickSpec {
                   cocoa-only: false
                 """
                 )
-                let conference = yaml[0]
+                let conference: Conference = yaml[0]
                 expect(conference.name).to(equal("mDevCamp"))
                 expect(conference.start).to(equal("2019-05-30".date()))
                 expect(conference.end).to(equal("2019-05-31".date()))

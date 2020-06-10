@@ -5,7 +5,7 @@
 
 import Foundation
 import SwiftUI
-
+import CCLibrary
 public struct FilterView: View {
     @ObservedObject var filter: Filter
     var reload: (Filter) -> Void
