@@ -25,8 +25,10 @@ extension String {
 }
 
 extension YAMLDecoder: TopLevelDecoder {
+    @available(iOS 13.0, *)
     public typealias Input = URLSession.DataTaskPublisher.Output
 
+    @available(iOS 13.0, *)
     public func decode<T: Decodable>(_ type: T.Type, from data: Input) throws -> T {
         try decode(type, from: String(data: data.data, encoding: .utf8)!)
     }

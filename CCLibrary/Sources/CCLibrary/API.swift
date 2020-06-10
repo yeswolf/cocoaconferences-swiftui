@@ -2,8 +2,10 @@ import Foundation
 import Combine
 import Yams
 
+@available(iOS 13.0, *)
 public let CCAPI = API(url: "https://raw.githubusercontent.com/Lascorbe/CocoaConferences/master/_data/conferences.yml")
 
+@available(iOS 13.0, *)
 public class API {
 
     private var url: String
