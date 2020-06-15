@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CAF52ED24927B1800B2A587 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2CAF52E924910DBB00B2A587 /* SwiftPackageProductDependency */; };
 		2CE8E6B523F18FD2005F18F5 /* conferences.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 62E983B4787D1DA8C74682ED /* conferences.yaml */; };
 		39CB6960762E858233104F40 /* Pods_CocoaConferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00BCC0047C4C6A3F954871F /* Pods_CocoaConferences.framework */; };
 		62E982BB6AC4155E029FC7BB /* CocoaConferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98042B39CBCAAA81FF66A /* CocoaConferencesUITests.swift */; };
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CAF52ED24927B1800B2A587 /* BuildFile in Frameworks */,
 				39CB6960762E858233104F40 /* Pods_CocoaConferences.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,14 +227,16 @@
 				62E987D066BA8414D6BCBC5A /* Sources */,
 				62E987A2A07D8A215A641E8F /* Frameworks */,
 				62E9847201BA6789D4E3A8D6 /* Resources */,
+				AA09F4E27D6992B080CD4C95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2CAF52EF24927B3900B2A587 /* PBXTargetDependency */,
 			);
 			name = CocoaConferences;
 			packageProductDependencies = (
-				2CAF52E924910DBB00B2A587,
+				2CAF52E924910DBB00B2A587 /* SwiftPackageProductDependency */,
 			);
 			productName = CocoaConferences;
 			productReference = 62E984F6F36392E8237CF7FA /* CocoaConferences.app */;
@@ -309,8 +313,6 @@
 				Base,
 			);
 			mainGroup = 62E98C6CAB6DE22D2C0692B5;
-			packageReferences = (
-			);
 			productRefGroup = 62E988E098A91A4546EBB02A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +415,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AA09F4E27D6992B080CD4C95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaConferences/Pods-CocoaConferences-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaConferences/Pods-CocoaConferences-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CocoaConferences/Pods-CocoaConferences-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FDD62414CB7649B7BD397D02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +490,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2CAF52EF24927B3900B2A587 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2CAF52EE24927B3900B2A587;
+		};
 		62E988E6CEC2802787391432 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 62E982FCA0B4E5F7B6D3B92D /* CocoaConferences */;
@@ -781,7 +804,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2CAF52E924910DBB00B2A587 = {
+		2CAF52E924910DBB00B2A587 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CCLibrary;
 		};
