@@ -13,14 +13,14 @@ import CCLibrary
 import Yams
 @testable import CocoaConferences
 
-class NetworkTests: QuickSpec {
+class ApiTests: QuickSpec {
     override func spec() {
         super.spec()
         describe("API") {
             it("should load conference list") {
                 waitUntil(timeout: 15) { done in
                     let filter = CCLibrary.Filter()
-                    api.conferences(filter: filter) { conferences in
+                    CCAPI.conferences(filter: filter) { conferences in
                         expect(conferences).toNot(beEmpty())
                         expect(conferences.count).to(beGreaterThan(1))
                         expect(conferences[0].name).toNot(beEmpty())

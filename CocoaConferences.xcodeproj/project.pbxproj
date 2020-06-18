@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CAF52ED24927B1800B2A587 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2CAF52E924910DBB00B2A587 /* SwiftPackageProductDependency */; };
 		2CE8E6B523F18FD2005F18F5 /* conferences.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 62E983B4787D1DA8C74682ED /* conferences.yaml */; };
 		39CB6960762E858233104F40 /* Pods_CocoaConferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00BCC0047C4C6A3F954871F /* Pods_CocoaConferences.framework */; };
 		62E982BB6AC4155E029FC7BB /* CocoaConferencesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98042B39CBCAAA81FF66A /* CocoaConferencesUITests.swift */; };
 		62E982F163E13EE212EE7DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98D366567F89D701A3500 /* AppDelegate.swift */; };
-		62E98301F0617801FA1C2C41 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988406E75611377DE5BE3 /* NetworkTests.swift */; };
+		62E98301F0617801FA1C2C41 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988406E75611377DE5BE3 /* ApiTests.swift */; };
 		62E98440D9DB132BCAE18C3F /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988D8445D4EAC7967D2E3 /* Checkbox.swift */; };
 		62E984466CDB5FCCC44F23C5 /* ConferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98AEE1D03736DB881DF32 /* ConferenceList.swift */; };
 		62E9865F4E0E58415D06A083 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E9812C5C9A21F1BF47E97C /* FilterView.swift */; };
 		62E9870936674CAC1F7E50B8 /* ConferenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E989B8350AA5075B975991 /* ConferenceDetail.swift */; };
 		62E987CF1FAF311278AB80E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E981E4576F31D41B18FD11 /* LaunchScreen.storyboard */; };
+		62E98CA9AF0406DE9C37BA52 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E9854E1A773F3B6D9CEE72 /* DateTests.swift */; };
 		62E98D34198595571D148415 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988CA738F6E5922DF6978 /* SceneDelegate.swift */; };
 		62E98D576F01B2809F11F2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E98E3507D4B7167E715F41 /* Assets.xcassets */; };
 		62E98DBC6CA3E6665C5DA499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E9887A664800442038D70C /* Preview Assets.xcassets */; };
@@ -52,10 +52,11 @@
 		62E9812C5C9A21F1BF47E97C /* FilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		62E983B4787D1DA8C74682ED /* conferences.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = conferences.yaml; sourceTree = "<group>"; };
 		62E984F6F36392E8237CF7FA /* CocoaConferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaConferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62E9854E1A773F3B6D9CEE72 /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		62E98673DF4274494F6E2DF0 /* CocoaConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E986CDA1DEB43F02C2EF2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		62E987E4EEE62DD173FCE2C9 /* LinkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
-		62E988406E75611377DE5BE3 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		62E988406E75611377DE5BE3 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 		62E9887A664800442038D70C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62E988CA738F6E5922DF6978 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		62E988D8445D4EAC7967D2E3 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CAF52ED24927B1800B2A587 /* BuildFile in Frameworks */,
 				39CB6960762E858233104F40 /* Pods_CocoaConferences.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				62E986CDA1DEB43F02C2EF2D /* Info.plist */,
-				62E988406E75611377DE5BE3 /* NetworkTests.swift */,
+				62E988406E75611377DE5BE3 /* ApiTests.swift */,
+				62E9854E1A773F3B6D9CEE72 /* DateTests.swift */,
 			);
 			path = CocoaConferencesTests;
 			sourceTree = "<group>";
@@ -236,7 +237,7 @@
 			);
 			name = CocoaConferences;
 			packageProductDependencies = (
-				2CAF52E924910DBB00B2A587 /* SwiftPackageProductDependency */,
+				2CAF52E924910DBB00B2A587,
 			);
 			productName = CocoaConferences;
 			productReference = 62E984F6F36392E8237CF7FA /* CocoaConferences.app */;
@@ -461,7 +462,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62E98301F0617801FA1C2C41 /* NetworkTests.swift in Sources */,
+				62E98301F0617801FA1C2C41 /* ApiTests.swift in Sources */,
+				62E98CA9AF0406DE9C37BA52 /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,7 +806,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2CAF52E924910DBB00B2A587 /* SwiftPackageProductDependency */ = {
+		2CAF52E924910DBB00B2A587 = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CCLibrary;
 		};

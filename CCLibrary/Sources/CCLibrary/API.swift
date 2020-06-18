@@ -31,10 +31,26 @@ public class API {
                                   }, receiveValue: { conferences in
                                       completion(
                                               conferences.sorted {
-                                                  if filter.asc { return $0.start! < $1.start! } else { return $0.start! > $1.start! }
-                                              }.filter { $0.start! > filter.start && $0.start! < filter.end }.filter {
-                                                  !filter.cfpOpened || ($0.cfp != nil) && (($0.cfp!.deadline == nil) || ($0.cfp!.deadline != nil && $0.cfp!.deadline! > Date()))
-                                              }
+                                                             if filter.asc {
+                                                                 return $0.start < $1.start
+                                                             } else {
+                                                                 return $0.start > $1.start
+                                                             }
+                                                         }
+                                                         .filter {
+                                                             if let end = $0.end {
+                                                                 return $0.start > filter.start && end < filter.end
+                                                             } else {
+                                                                 return $0.start > filter.start && $0.start < filter.end
+                                                             }
+                                                         }
+                                                         .filter {
+                                                               var result = !filter.cfpOpened
+                                                               if let cfp = $0.cfp, let deadline = cfp.deadline {
+                                                                   result = result || deadline > Date()
+                                                               }
+                                                               return result
+                                                         }
                                       )
                                   })
     }
