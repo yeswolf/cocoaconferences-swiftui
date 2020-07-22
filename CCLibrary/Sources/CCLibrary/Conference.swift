@@ -3,7 +3,7 @@ public class Conference: Codable, Identifiable {
     public var name = ""
     public var location: String
     public var cocoaOnly = false
-    public var start: Date?
+    public var start: Date
     public var end: Date?
     public var cfp: Cfp?
     public var link: String?
@@ -31,10 +31,14 @@ public class Conference: Codable, Identifiable {
     }
 
     public func textDates() -> String {
-        var result = "🗓 \(start!.friendly())"
+        var result = "\(start.friendly())"
         if let end = self.end {
-            result = "\(result) - \(end.friendly())"
+            if start < end {
+                result = "\(result) - \(end.friendly())"
+            } else if start > end {
+                result = "\(end.friendly()) - \(result)"
+            }
         }
-        return result
+        return "🗓 \(result)"
     }
 }

@@ -36,7 +36,7 @@ public struct FilterView: View {
                         }, label: { Text("Filter") })
                 ).navigationBarTitle("Filter", displayMode: .automatic)
             }
-        }
+        }.frame(minHeight: 600).frame(minWidth: 400)
     }
 }
 
