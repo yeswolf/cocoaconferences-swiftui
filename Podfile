@@ -5,6 +5,7 @@ project 'CocoaConferences.xcodeproj'
 
 target 'CocoaConferences' do
   use_frameworks!
+  pod 'Swinject'
 
   target 'CocoaConferencesTests' do
     inherit! :search_paths

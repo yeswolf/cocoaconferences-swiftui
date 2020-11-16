@@ -1,6 +1,6 @@
 ##########################
 #
-# Use this file to add a new conference to the list of past/upcoming Cocoa conferences
+# Use this file to add a new conference to the list of past/upcoming Cococa conferences
 #
 # All conferences must provide a name.
 #
@@ -23,6 +23,43 @@
 #
 ##########################
 
+- name: NSSpain 2020 Remote Edition
+  link: https://remote.nsspain.com/
+  start: 2020-11-19
+  end: 2020-11-20
+  location: 🌐 Online
+  cocoa-only: true
+  cfp:
+    link: https://remote.nsspain.com/index.html#c4p
+    deadline: 2020-10-10
+
+- name: Swift Heroes Digital
+  link: https://swiftheroes.com/2020/
+  start: 2020-10-01
+  end: 2020-10-02
+  location: 🌐 Online
+  cocoa-only: true
+
+- name: Back to the Mac
+  link: https://backtomac.org
+  start: 2020-11-09
+  end: 2020-11-10
+  location: 🌐 Online
+  cocoa-only: true
+  cfp:
+    link: https://backtomac.org
+    deadline: 2020-09-15
+
+- name: Swift TO
+  link: https://www.swiftconf.to/
+  start: 2020-08-13
+  end: 2020-08-14
+  location: 🇨🇦 Toronto, Canada
+  cocoa-only: true
+  cfp:
+    link: https://www.papercall.io/swift-to-2020
+    deadline: 2020-06-16
+
 - name: Pragma Conference
   link: https://pragmaconference.com/
   start: 2020-10-07
@@ -33,15 +70,15 @@
     link: https://docs.google.com/forms/d/e/1FAIpQLSd24Hp5KRDiaLkOh7kGkjQHol88cz-7ruRt--3nqumWoOVgow/viewform?usp=sf_link
     deadline: 2020-06-30
 
-- name: Mobile Conf Thailand
-  link: https://mobileconfth.com
-  start: 2020-08-29
-  end: 2020-08-29
-  location: 🇹🇭 Bangkok, Thailand
-  cocoa-only: false
+- name: FrenchKit SE
+  link: https://www.frenchkit.fr/
+  start: 2020-10-02
+  end: 2020-10-02
+  location: 🇫🇷 Paris, France
+  cocoa-only: true
   cfp:
-    link: https://www.papercall.io/mobileconf2020
-    deadline: 2020-06-30
+    link: https://www.papercall.io/frenchkit-2020
+    deadline: 2020-08-24
 
 - name: Mobile Conf Thailand
   link: https://mobileconfth.com
@@ -57,13 +94,6 @@
   location: 🇹🇭 Bangkok, Thailand
   cocoa-only: false
 
-- name: Swift Island
-  link: https://swiftisland.nl
-  start: 2020-08-25
-  end: 2020-08-27
-  location: 🇳🇱 Texel, Netherlands
-  cocoa-only: true
-
 - name: iOS Conf SG
   link: http://iosconf.sg/
   start: 2021-01-21
@@ -74,48 +104,29 @@
     link: https://www.papercall.io/iosconfsg2021
     deadline: 2020-08-18
 
-- name: iOSDevUK
-  link: http://www.iosdevuk.com/
-  start: 2020-09-06
-  end: 2020-09-09
-  location: 🇬🇧 Aberystwyth, UK
-  cocoa-only: true
-  cfp:
-    link: https://docs.google.com/forms/d/e/1FAIpQLSehHlTPYDW0NjegZfJDAiOWE65GMAK1k36Yf-TTIteYswP3CA/viewform
-    deadline: 2020-01-31
-
 - name: "Hacking with Swift: Live!"
   link: https://www.hackingwithswift.com/live
   start: 2020-07-13
   end: 2020-07-14
-  location: 🇬🇧 Bath, UK
-  cocoa-only: true
-
-- name: try! Swift NYC 2020
-  link: https://www.tryswift.co/events/2020/nyc/
-  start: 2020-08-30
-  end: 2020-09-01
-  location: 🇺🇸 New York City, NY, USA
-  cocoa-only: true
-  cfp:
-    link: https://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiMTkzMzg1NCIsImRlbGl2ZXJ5X2lkIjoiZGFnenp6YnBhMTZnMWN3bDJ5aW8iLCJ1cmwiOiJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9mb3Jtcy9kL2UvMUZBSXBRTFNkWkdBS1FMbjhDbVN6MmRWa0R6VVVWVHAzZVYwSS03a3J4NVZVbkpRUnk5RmxEVlEvdmlld2Zvcm0_Yz0wXHUwMDI2dz0xXHUwMDI2X19zPXh4eHh4eHhcdTAwMjZfX3M9bXFzemhub213YWgyeWF2dnR1a3EifQ
-
-- name: SwiftAveiro
-  link: https://www.swiftaveiro.xyz/
-  location: 🇵🇹 Aveiro, Portugal
-  start: 2020-06-25
-  end: 2020-06-27
+  location: 🌐 Online
   cocoa-only: true
 
 - name: 360iDev
   link: https://360idev.com
   start: 2020-08-16
   end: 2020-08-19
-  location: 🇺🇸 Denver, CO, USA
+  location: 🌐 Online
   cocoa-only: true
   cfp:
     link: https://360idev.com/call-for-papers/
-    deadline: 2020-05-03
+    deadline: 2020-05-08
+
+- name: WWDC
+  link: https://developer.apple.com/wwdc/
+  start: 2020-06-22
+  end: 2020-06-26
+  location: 🌐 Online
+  cocoa-only: true
 
 - name: App Builders
   link: https://appbuilders.ch
@@ -139,18 +150,15 @@
 
 - name: ADDC - App Design & Development Conference
   link: https://addconf.com/
-  start: 2020-06-24
-  end: 2020-06-26
+  start: 2021-06-23
+  end: 2021-06-25
   location: 🇪🇸 Barcelona, Spain
   cocoa-only: false
-  cfp:
-    link: https://addconf.typeform.com/to/UYLfhu
-    deadline: 2020-02-15
 
 - name: SwiftLeeds
   link: https://swiftleeds.co.uk/
-  start: 2020-10-07
-  end: 2020-10-08
+  start: 2021-10-07
+  end: 2021-10-07
   location: 🇬🇧 Leeds, UK
   cocoa-only: true
 
@@ -179,15 +187,6 @@
   end: 2019-10-26
   location: 🇵🇱 Łódź, Poland
   cocoa-only: false
-
-- name: try! Swift Tokyo
-  link: https://www.tryswift.co/events/2020/tokyo/en/
-  start: 2020-03-18
-  end: 2020-03-20
-  location: 🇯🇵 Tokyo, Japan
-  cocoa-only: true
-  cfp:
-    link: https://docs.google.com/forms/d/e/1FAIpQLSdZGAKQLn8CmSz2dVkDzUUVTp3eV0I-7krx5VUnJQRy9FlDVQ/viewform
 
 - name: Mobius
   link: https://mobiusconf.com/en/
@@ -218,23 +217,10 @@
 
 - name: Appdevcon
   link: https://appdevcon.nl
-  start: 2020-03-10
-  end: 2020-03-13
+  start: 2021-03-15
+  end: 2021-03-18
   location: 🇳🇱 Amsterdam, The Netherlands
   cocoa-only: false
-  cfp:
-    link: https://docs.google.com/forms/d/e/1FAIpQLSfDVG0D_F71flB4MnfZwnnJOxoBvHzMyOjynEgd3JnG31dgow/viewform
-    deadline: 2019-12-01
-
-- name: CodeMobile
-  link: https://www.codemobile.co.uk/
-  start: 2020-04-28
-  end: 2020-04-29
-  location: 🇬🇧 London, UK
-  cocoa-only: false
-  cfp:
-    link: https://www.codemobile.co.uk/call-for-speakers/
-    deadline: 2019-11-15
 
 - name: Swift Alps
   link: https://theswiftalps.com/
@@ -1617,3 +1603,13 @@
   cfp:
     link: https://www.papercall.io/iosconfsg2020
     deadline: 2019-09-15
+
+- name: iOSDevCampDC
+  link: https://iosdevcampdc.com
+  start: 2020-10-30
+  end: 2020-10-30
+  location: 🌐 Online
+  cocoa-only: true
+  cfp:
+    link: https://forms.gle/gWpQGta1mpykU6sE8
+    deadline: 2020-09-28

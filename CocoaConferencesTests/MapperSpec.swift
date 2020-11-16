@@ -1,34 +1,23 @@
 //
-//  CocoaConferencesTests.swift
-//  CocoaConferencesTests
-//
-//  Created by jetbrains on 15.11.2019.
-//  Copyright © 2019 JetBrains. All rights reserved.
+// Created by jetbrains on 11/16/20.
+// Copyright (c) 2020 JetBrains. All rights reserved.
 //
 
+import Foundation
 import XCTest
 import Quick
 import Nimble
 import Yams
+import Swinject
+import Combine
 @testable import CocoaConferences
 
-class NetworkTests: QuickSpec {
+class MapperSpec: QuickSpec  {
     override func spec() {
         super.spec()
-        describe("API") {
-            it("should load conference list") {
-                waitUntil(timeout: 15) { done in
-                    let filter = CocoaConferences.Filter()
-                    api.conferences(filter: filter) { conferences in
-                        expect(conferences).toNot(beEmpty())
-                        expect(conferences.count).to(beGreaterThan(1))
-                        expect(conferences[0].name).toNot(beEmpty())
-                        done()
-                    }
-                }
-            }
-            it("should load conference without CFP") {
-                let decoder = YAMLDecoder()
+        describe("Mapper"){
+            it("should map conference without CFP") {
+                let decoder = ConferencesMapper()
                 let yaml = try! decoder.decode([Conference].self, from:
                 """
                 - name: mDevCamp
@@ -56,8 +45,8 @@ class NetworkTests: QuickSpec {
                 expect(conference.cfp!.link).to(equal(cfp.link))
                 expect(conference.cfp!.deadline).to(equal(cfp.deadline))
             }
-            it("should load conference with CFP") {
-                let decoder = YAMLDecoder()
+            it("should map conference with CFP") {
+                let decoder = ConferencesMapper()
                 let yaml = try! decoder.decode([Conference].self, from:
                 """
                 - name: mDevCamp
@@ -77,6 +66,6 @@ class NetworkTests: QuickSpec {
                 expect(conference.cfp).to(beNil())
             }
         }
-    }
 
+    }
 }
