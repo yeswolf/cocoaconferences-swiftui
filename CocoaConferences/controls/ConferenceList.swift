@@ -68,8 +68,7 @@ struct ConferenceList: View {
 
 class ConferenceListPreviews: PreviewProvider {
     static var previews: some View {
-        let conferencesRepository = ConferencesRepository(conferencesSource: PreviewConferencesSource())
-        let getConferences = GetFilteredConferencesUseCase(conferencesRepository: conferencesRepository)
+        let getConferences = Scopes.test.resolve(GetFilteredConferencesUseCase.self)!
         var mockConferences: [Conference] = [Conference()]
         getConferences.execute(filter: Filter())
                 .receive(on: RunLoop.main)
