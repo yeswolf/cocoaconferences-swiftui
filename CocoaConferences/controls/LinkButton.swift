@@ -6,19 +6,30 @@
 import Foundation
 import SwiftUI
 
+public class LinkButtonViewModel: ObservableObject {
+    var title: String
+    var link: String
+
+    public init(title: String, link: String) {
+        self.title = title
+        self.link = link
+    }
+
+    func click() -> Void {
+        let url = URL(string: link)!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+}
+
 public struct LinkButton: View {
-    var title = ""
-    var link = ""
+    var viewModel: LinkButtonViewModel
     public var body: some View {
-        Button(action: {
-            let url = URL(string: link)!
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }) {
-            Text(title).underline().lineLimit(1)
+        Button(action: viewModel.click) {
+            Text(viewModel.title).underline().lineLimit(1)
         }
     }
 }
@@ -26,7 +37,7 @@ public struct LinkButton: View {
 class LinkButtonPreview: PreviewProvider {
     static var previews: some View {
         Group {
-            LinkButton(title: "%title%", link: "https://www.google.com").previewLayout(.sizeThatFits)
+            LinkButton(viewModel: LinkButtonViewModel(title: "%title%", link: "https://www.google.com")).previewLayout(.sizeThatFits)
         }
     }
 

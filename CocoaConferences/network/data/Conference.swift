@@ -32,11 +32,4 @@ class Conference: Codable, Identifiable {
         case start
     }
 
-    func textDates() -> String {
-        var result = "🗓 \(start!.friendly())"
-        if let end = end {
-            result = "\(result) - \(end.friendly())"
-        }
-        return result
-    }
 }

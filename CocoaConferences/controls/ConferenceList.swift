@@ -10,15 +10,11 @@ import SwiftUI
 import Combine
 import Swinject
 
-#warning("FIXME: nobody knows why doesn't it work as @State")
-private var disposables = Set<AnyCancellable>()
-
-struct ConferenceList: View {
-    @ObservedObject var filter: Filter = Filter()
-
-    @State var conferences = [Conference]()
-
-    @State var filterOpened = false
+class ConferenceListViewModel: ObservableObject {
+    @Published var conferences = [Conference]()
+    @Published var filterOpened = false
+    var filter = Filter()
+    private var disposables = Set<AnyCancellable>()
 
     private var getFilteredConferences: GetFilteredConferencesUseCase {
         get {
@@ -26,10 +22,32 @@ struct ConferenceList: View {
         }
     }
 
+    func reload(filter: Filter){
+        self.filter = filter
+        getFilteredConferences.execute(filter: filter)
+                .receive(on: RunLoop.main)
+                .sink(receiveCompletion: { completion in }, receiveValue: { [self] conferences in
+                    self.conferences = conferences
+                    closeFilter()
+                })
+                .store(in: &disposables)
+    }
+
+    func closeFilter(){
+        filterOpened = false
+    }
+
+    func toggleFilter() {
+        filterOpened.toggle()
+    }
+}
+
+struct ConferenceList: View {
+    @ObservedObject var viewModel: ConferenceListViewModel = ConferenceListViewModel()
     var body: some View {
         NavigationView {
-            List(conferences) { conference in
-                NavigationLink(destination: ConferenceDetail(conference: conference)) {
+            List(viewModel.conferences) { conference in
+                NavigationLink(destination: ConferenceDetail(viewModel: ConferenceDetailViewModel(conference: conference))) {
                     VStack(alignment: .leading) {
                         Text(conference.name).font(.headline)
                         Text(conference.location).font(.subheadline)
@@ -38,45 +56,30 @@ struct ConferenceList: View {
             }.navigationBarTitle("Conferences")
                     .navigationBarItems(
                             trailing: Button(action: {
-                                self.filterOpened.toggle()
+                                viewModel.toggleFilter()
                             }, label: {
                                 Text("Filter")
-                            }).popover(isPresented: $filterOpened, content: {
-                                FilterView(filter: filter, reload: { [self] filter in
-                                    self.filterOpened.toggle()
-                                    getFilteredConferences.execute(filter: self.filter)
-                                            .receive(on: RunLoop.main)
-                                            .sink(receiveCompletion: { completion in }, receiveValue: { [self] conferences in
-                                                self.conferences = conferences
-                                            })
-                                            .store(in: &disposables)
+                            }).popover(isPresented: $viewModel.filterOpened, content: {
+                                FilterView(viewModel: FilterViewModel(start: viewModel.filter.start,
+                                        end: viewModel.filter.end, cfpOpened: viewModel.filter.cfpOpened, asc: viewModel.filter.asc, reload: { filter in
+                                    viewModel.reload(filter: filter)
                                 }, dismiss: {
-                                    self.filterOpened.toggle()
-                                })
+                                    viewModel.toggleFilter()
+                                }
+                                ))
                             })
                     )
         }.onAppear {
-            getFilteredConferences.execute(filter: Filter())
-                    .receive(on: RunLoop.main)
-                    .sink(receiveCompletion: { completion in }, receiveValue: { [self] conferences in
-                        self.conferences = conferences
-                    })
-                    .store(in: &disposables)
+            viewModel.reload(filter: Filter())
         }
     }
 }
 
 class ConferenceListPreviews: PreviewProvider {
     static var previews: some View {
-        let getConferences = Scopes.test.resolve(GetFilteredConferencesUseCase.self)!
-        var mockConferences: [Conference] = [Conference()]
-        getConferences.execute(filter: Filter())
-                .receive(on: RunLoop.main)
-                .sink(receiveCompletion: { completion in }, receiveValue: { conferences in
-                    mockConferences = conferences
-                    print(conferences)
-                }).store(in: &disposables)
-        return ConferenceList(filter: Filter(), conferences: mockConferences, filterOpened: false).previewDevice("iPhone 11")
+        let viewModel: ConferenceListViewModel = ConferenceListViewModel() 
+        viewModel.conferences = [Conference()]
+        return ConferenceList(viewModel: viewModel).previewDevice("iPhone 11")
     }
 
     #if DEBUG
