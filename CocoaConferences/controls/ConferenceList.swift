@@ -42,7 +42,7 @@ struct ConferenceList: View {
                             }, label: {
                                 Text("Filter")
                             }).popover(isPresented: $filterOpened, content: {
-                                FilterView(filter: self.filter, reload: { [self] filter in
+                                FilterView(filter: filter, reload: { [self] filter in
                                     self.filterOpened.toggle()
                                     getFilteredConferences.execute(filter: self.filter)
                                             .receive(on: RunLoop.main)

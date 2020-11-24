@@ -11,14 +11,14 @@ public struct LinkButton: View {
     var link = ""
     public var body: some View {
         Button(action: {
-            let url = URL(string: self.link)!
+            let url = URL(string: link)!
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(url)
             }
         }) {
-            Text(self.title).underline().lineLimit(1)
+            Text(title).underline().lineLimit(1)
         }
     }
 }

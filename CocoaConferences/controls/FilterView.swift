@@ -29,10 +29,10 @@ public struct FilterView: View {
                     }.listStyle(GroupedListStyle())
                 }.navigationBarItems(
                         leading: Button(action: {
-                            self.dismiss()
+                            dismiss()
                         }, label: { Text("Cancel") }),
                         trailing: Button(action: {
-                            self.reload(self.filter)
+                            reload(filter)
                         }, label: { Text("Filter") })
                 ).navigationBarTitle("Filter", displayMode: .automatic)
             }

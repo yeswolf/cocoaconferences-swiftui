@@ -12,7 +12,7 @@ struct ConferenceDetail: View {
         VStack(alignment: .leading, spacing: 5.0) {
             HStack {
                 Text("🔗")
-                LinkButton(title: self.conference.link!, link: self.conference.link!)
+                LinkButton(title: conference.link!, link: conference.link!)
             }
             Text(conference.textDates())
             Text(conference.location)
@@ -22,9 +22,9 @@ struct ConferenceDetail: View {
                     Text("See website for details")
                 } else {
                     if conference.cfp!.deadline != nil {
-                        LinkButton(title:self.conference.cfp!.deadline!.friendly(), link: self.conference.cfp!.link)
+                        LinkButton(title:conference.cfp!.deadline!.friendly(), link: conference.cfp!.link)
                     } else {
-                        LinkButton(title: "Deadline not specified", link: self.conference.cfp!.link)
+                        LinkButton(title: "Deadline not specified", link: conference.cfp!.link)
                     }
                 }
             }

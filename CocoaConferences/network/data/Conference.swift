@@ -34,7 +34,7 @@ class Conference: Codable, Identifiable {
 
     func textDates() -> String {
         var result = "🗓 \(start!.friendly())"
-        if let end = self.end {
+        if let end = end {
             result = "\(result) - \(end.friendly())"
         }
         return result
