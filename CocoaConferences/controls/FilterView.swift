@@ -58,7 +58,7 @@ class FilterViewPreview: PreviewProvider {
     static var previews: some View {
         Group {
             let filter = Filter()
-            FilterView(viewModel: FilterViewModel(filter: filter, reload: { filter in }, dismiss: {})).previewLayout(.sizeThatFits)
+            FilterView(viewModel: FilterViewModel(filter: filter, reload: { filter in }, dismiss: {})).previewDevice("iPhone 11")
         }
     }
 

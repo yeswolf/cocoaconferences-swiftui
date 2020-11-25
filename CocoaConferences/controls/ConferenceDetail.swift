@@ -82,7 +82,7 @@ struct ConferenceDetail: View {
 class ConferenceDetailPreview: PreviewProvider {
     static var previews: some View {
         Group {
-            ConferenceDetail(viewModel: ConferenceDetailViewModel(conference:Conference()))
+            ConferenceDetail(viewModel: ConferenceDetailViewModel(conference:Conference())).previewDevice("iPhone 11")
         }
     }
 
