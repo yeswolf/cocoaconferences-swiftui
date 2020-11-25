@@ -8,28 +8,18 @@ import SwiftUI
 import Combine
 
 class FilterViewModel: ObservableObject {
-    private var disposables = Set<AnyCancellable>()
-
-    private var getFilteredConferences: GetFilteredConferencesUseCase {
-        get {
-            Scopes.app.resolve(GetFilteredConferencesUseCase.self)!
-        }
-    }
-
-    @Published var start: Date
-    @Published var end: Date
-    @Published var cfpOpened: Bool
-    @Published var asc: Bool
+    @Published var filter: Filter
     var reload: (Filter) -> Void
     var dismiss: () -> Void
 
-    init(start: Date, end: Date, cfpOpened: Bool, asc: Bool, reload: @escaping (Filter) -> (), dismiss: @escaping () -> ()) {
-        self.start = start
-        self.end = end
-        self.cfpOpened = cfpOpened
-        self.asc = asc
+    init(filter: Filter, reload: @escaping (Filter) -> (), dismiss: @escaping () -> ()) {
         self.reload = reload
         self.dismiss = dismiss
+        self.filter = filter
+    }
+
+    func filterChanged(){
+        reload(filter)
     }
 }
 
@@ -41,14 +31,14 @@ public struct FilterView: View {
                 VStack(alignment: .leading) {
                     List {
                         Section(header: Text("START DATE")) {
-                            DatePicker("", selection: self.$viewModel.start, displayedComponents: .date).labelsHidden()
+                            DatePicker("", selection: self.$viewModel.filter.start, displayedComponents: .date).labelsHidden()
                         }
                         Section(header: Text("END DATE")) {
-                            DatePicker("", selection: self.$viewModel.end, displayedComponents: .date).labelsHidden()
+                            DatePicker("", selection: self.$viewModel.filter.end, displayedComponents: .date).labelsHidden()
                         }
                         Section(header: Text("OPTIONS")) {
-                            Checkbox(text: "CFP opened", checked: self.$viewModel.cfpOpened)
-                            Checkbox(text: "Sort ASC", checked: self.$viewModel.asc)
+                            Checkbox(text: "CFP opened", checked: self.$viewModel.filter.cfpOpened)
+                            Checkbox(text: "Sort ASC", checked: self.$viewModel.filter.asc)
                         }
                     }.listStyle(GroupedListStyle())
                 }.navigationBarItems(
@@ -56,8 +46,7 @@ public struct FilterView: View {
                             viewModel.dismiss()
                         }, label: { Text("Cancel") }),
                         trailing: Button(action: {
-                            viewModel.reload(Filter(start: viewModel.start,
-                                    end: viewModel.end, cfpOpened: viewModel.cfpOpened, asc: viewModel.asc))
+                            viewModel.filterChanged()
                         }, label: { Text("Filter") })
                 ).navigationBarTitle("Filter", displayMode: .automatic)
             }
@@ -69,7 +58,7 @@ class FilterViewPreview: PreviewProvider {
     static var previews: some View {
         Group {
             let filter = Filter()
-            FilterView(viewModel: FilterViewModel(start: filter.start, end: filter.end, cfpOpened: filter.cfpOpened, asc: filter.asc, reload: { filter in }, dismiss: {})).previewLayout(.sizeThatFits)
+            FilterView(viewModel: FilterViewModel(filter: filter, reload: { filter in }, dismiss: {})).previewLayout(.sizeThatFits)
         }
     }
 

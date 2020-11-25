@@ -13,7 +13,7 @@ import Swinject
 class ConferenceListViewModel: ObservableObject {
     @Published var conferences = [Conference]()
     @Published var filterOpened = false
-    var filter = Filter()
+    @Published var filter = Filter()
     private var disposables = Set<AnyCancellable>()
 
     private var getFilteredConferences: GetFilteredConferencesUseCase {
@@ -60,8 +60,7 @@ struct ConferenceList: View {
                             }, label: {
                                 Text("Filter")
                             }).popover(isPresented: $viewModel.filterOpened, content: {
-                                FilterView(viewModel: FilterViewModel(start: viewModel.filter.start,
-                                        end: viewModel.filter.end, cfpOpened: viewModel.filter.cfpOpened, asc: viewModel.filter.asc, reload: { filter in
+                                FilterView(viewModel: FilterViewModel(filter: viewModel.filter, reload: { filter in
                                     viewModel.reload(filter: filter)
                                 }, dismiss: {
                                     viewModel.toggleFilter()
@@ -70,7 +69,7 @@ struct ConferenceList: View {
                             })
                     )
         }.onAppear {
-            viewModel.reload(filter: Filter())
+            viewModel.reload(filter: viewModel.filter)
         }
     }
 }

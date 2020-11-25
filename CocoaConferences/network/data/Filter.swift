@@ -6,11 +6,11 @@
 import Foundation
 import Combine
 
-class Filter {
-    var start: Date = Date()
-    var end: Date = Calendar.current.date(byAdding: .year, value: 1, to: Date())!
-    var cfpOpened: Bool = false
-    var asc: Bool = false
+class Filter : ObservableObject {
+    @Published var start: Date = Date()
+    @Published var end: Date = Calendar.current.date(byAdding: .year, value: 1, to: Date())!
+    @Published var cfpOpened: Bool = false
+    @Published var asc: Bool = false
 
     init(start: Date, end: Date, cfpOpened: Bool, asc: Bool) {
         self.start = start
