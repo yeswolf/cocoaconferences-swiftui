@@ -58,7 +58,7 @@ class ConferenceDetailViewModel: ObservableObject {
 struct ConferenceDetail: View {
     @ObservedObject var viewModel: ConferenceDetailViewModel
     var body: some View {
-        VStack(alignment: .leading, spacing: 5.0) {
+        VStack(alignment: .leading, spacing: 15.0) {
             HStack {
                 Text("🔗")
                 LinkButton(viewModel: viewModel.link)

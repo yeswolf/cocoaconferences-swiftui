@@ -12,13 +12,13 @@ class FilterViewModel: ObservableObject {
     var reload: (Filter) -> Void
     var dismiss: () -> Void
 
-    init(filter: Filter, reload: @escaping (Filter) -> (), dismiss: @escaping () -> ()) {
+    init(filter: Filter, reload: @escaping (Filter) -> Void, dismiss: @escaping () -> Void) {
         self.reload = reload
         self.dismiss = dismiss
         self.filter = filter
     }
 
-    func filterChanged(){
+    func filterChanged() {
         reload(filter)
     }
 }
@@ -58,7 +58,7 @@ class FilterViewPreview: PreviewProvider {
     static var previews: some View {
         Group {
             let filter = Filter()
-            FilterView(viewModel: FilterViewModel(filter: filter, reload: { filter in }, dismiss: {})).previewDevice("iPhone 11")
+            FilterView(viewModel: FilterViewModel(filter: filter, reload: { _ in }, dismiss: {})).previewDevice("iPhone 11")
         }
     }
 
