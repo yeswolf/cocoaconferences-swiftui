@@ -23,7 +23,6 @@
 		62E98440D9DB132BCAE18C3F /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E988D8445D4EAC7967D2E3 /* Checkbox.swift */; };
 		62E9865F4E0E58415D06A083 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E9812C5C9A21F1BF47E97C /* FilterView.swift */; };
 		62E9870936674CAC1F7E50B8 /* ConferenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E989B8350AA5075B975991 /* ConferenceDetail.swift */; };
-		62E9877B2EC43D9E6F8ECEEB /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62E985D4EE049F2475D8B1F7 /* 1.txt */; };
 		62E987B30B6EFE12F96440F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62E98AEC9E287ACE51720B43 /* Localizable.strings */; };
 		62E987CF1FAF311278AB80E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E981E4576F31D41B18FD11 /* LaunchScreen.storyboard */; };
 		62E98855C2369D2CBE93A07B /* MapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98ADB08A84DA51293751C /* MapperSpec.swift */; };
@@ -63,7 +62,6 @@
 		62E9815C780BC86A5625DED8 /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		62E983B4787D1DA8C74682ED /* conferences.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = conferences.yaml; sourceTree = "<group>"; };
 		62E984F6F36392E8237CF7FA /* CocoaConferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaConferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		62E985D4EE049F2475D8B1F7 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
 		62E98673DF4274494F6E2DF0 /* CocoaConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E986CDA1DEB43F02C2EF2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		62E987E4EEE62DD173FCE2C9 /* LinkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 				62E987D30116F16D073A54B0 /* CocoaConferencesTests */,
 				62E982D64E9BE7BA67C3CB50 /* CocoaConferencesUITests */,
 				62E98F60EF834645CD31A66A /* .gitignore */,
-				62E985D4EE049F2475D8B1F7 /* 1.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,7 +385,6 @@
 				62E98DBC6CA3E6665C5DA499 /* Preview Assets.xcassets in Resources */,
 				62E98F9C30EC9133BA1A6A75 /* .gitignore in Resources */,
 				62E987B30B6EFE12F96440F3 /* Localizable.strings in Resources */,
-				62E9877B2EC43D9E6F8ECEEB /* 1.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
